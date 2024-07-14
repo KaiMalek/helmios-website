@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'NType82Mono';
+  src: url('NType82Mono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #0E1116;
+  color: whitesmoke;
+  font-family: 'NType82Mono', sans-serif;
+}
+
+#object2 {
+  margin: auto;
+  width: 50%;
+  padding: 13%;
+  text-align: center;
+}
+
+.dot, .dot:before, .dot:after {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+}
+
+.dot {
+  top: 33%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background-color: #9e7b9b;
+}
+
+.dot:before, .dot:after {
+  content: "";
+}
+
+.dot:before {
+  right: 10px;
+  transition: right .4s ease-out;
+}
+
+.dot:after {
+  left: 10px;
+  transition: left .4s ease-out;
+}
+
+.dots:hover .dot:before {
+  right: -10px;
+  background-color: #9e7b9b;
+}
+
+.dots:hover .dot:after {
+  left: -10px;
+  background-color: #9e7b9b;
+}
+
+#rectangle {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 100px;
+  background-color: #374a67;
+  opacity: 0;
+  border-radius: 10px;
+  animation: fadeIn 2s forwards;
+  transform: translate(-50%, -50%);
+  top: calc(50% - 100px);
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
