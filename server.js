@@ -8,7 +8,7 @@ const sqlite3 = require('sqlite3').verbose();
 const { db, findUserByUsername, registerUser, checkInviteCode, markInviteCodeAsUsed } = require('./db');
 
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-    secret: '79352874618032956147',
+    secret: '',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false } // change later when https
@@ -141,6 +141,6 @@ app.get('/logout', (req, res) => {
     });
 });
 
-app.listen(PORT, '192.168.1.154', () => {
+app.listen(PORT, 'localhost', () => {
     console.log(`Server is running on port ${PORT}`);
 });
